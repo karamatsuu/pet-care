@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetJournal Care</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <section class="phone" aria-label="Pet care app">
+      <div class="phone-speaker" aria-hidden="true"></div>
+
+      <section class="screen active" id="homeScreen">
+        <div class="ambient ambient-paws">🐾</div>
+        <div class="ambient ambient-leaf">叶</div>
+        <header class="app-header">
+          <button class="icon-button" aria-label="Open menu">☰</button>
+          <div class="hello">
+            <span>Hello,</span>
+            <strong>Cooper</strong>
+          </div>
+          <button class="profile-photo" data-go="profile" aria-label="Profile">S</button>
+        </header>
+
+        <label class="search">
+          <span>⌕</span>
+          <input type="search" placeholder="Search pets, memories, care notes">
+        </label>
+
+        <div class="section-row">
+          <h1>My Pets</h1>
+          <button class="round-add" id="addPet">+</button>
+        </div>
+
+        <div class="pet-cards" id="petCards"></div>
+
+        <section class="home-panels" aria-label="Pet dashboard">
+          <article class="dashboard-card memories-panel" data-go="memories" role="button" tabindex="0">
+            <div class="panel-title"><span>♡</span><h2>Memories</h2></div>
+            <div class="photo-grid" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p class="panel-caption">Recent Memory:</p>
+            <p><strong id="homeRecentMemory">Max's Birthday Walk</strong> | <span id="homeRecentCaption">birthday snapshots, quiet walks, and the tiny moments worth keeping.</span></p>
+          </article>
+
+          <article class="dashboard-card health-panel" data-go="health" role="button" tabindex="0">
+            <div class="panel-title"><span>✚</span><h2>Health</h2></div>
+            <div class="progress-row"><span>Vaccinations</span><strong>10/10</strong><i style="width: 88%"></i></div>
+            <div class="progress-row teal"><span>Progress</span><strong>9/6</strong><i style="width: 70%"></i></div>
+            <div class="progress-row"><span>Goal track</span><strong>7/5</strong><i style="width: 78%"></i></div>
+            <div class="mini-calendar" aria-label="Appointment calendar">
+              <b>S</b><b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b>
+              <span>29</span><span>30</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+              <span>6</span><span>7</span><span class="marked">8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+            </div>
+          </article>
+
+          <article class="dashboard-card community-panel" data-go="profile" role="button" tabindex="0">
+            <div class="panel-title"><span>✦</span><h2>Community</h2></div>
+            <div class="avatar-row">
+              <span>A</span><span>M</span><span>R</span><span>L</span><button>+</button>
+            </div>
+            <p class="panel-caption">Recent posts</p>
+            <p><strong>Kaseen Evonard</strong> · Round cares and the needs of a celebration.</p>
+          </article>
+        </section>
+      </section>
+
+      <section class="screen" id="memoriesScreen">
+        <header class="sub-header">
+          <button class="icon-button" data-go="home">‹</button>
+          <h1>Memory Garden</h1>
+          <button class="icon-button" id="newStory">✦</button>
+        </header>
+        <article class="hero-memory">
+          <p class="tiny">Today with <span id="memoryPetName">Max</span></p>
+          <h2 id="memoryTitle">The walk that slowed time down</h2>
+          <p id="memoryText">He pressed his nose into every flower and looked back as if he wanted me to remember the whole path.</p>
+          <div class="ai-note" id="memoryAi"></div>
+        </article>
+        <form class="journal-form" id="journalForm">
+          <label>What do you want to remember?
+            <textarea id="journalText" rows="4" maxlength="500" placeholder="Write the tiny moment, funny habit, health note, or soft memory you never want to lose.">Max rested his chin on my knee after dinner, completely calm, like he knew I needed a quiet minute.</textarea>
+            <div class="form-helper"><span id="charCount">0</span>/500 characters</div>
+          </label>
+          <button class="primary-button" type="submit">Turn into a story</button>
+          <div class="form-status" id="journalStatus" role="status" aria-live="polite"></div>
+        </form>
+        <div class="memory-list" id="memoryList"></div>
+      </section>
+
+      <section class="screen" id="healthScreen">
+        <header class="sub-header">
+          <button class="icon-button" data-go="home">‹</button>
+          <h1>Care Plan</h1>
+          <button class="icon-button">⋯</button>
+        </header>
+        <article class="care-summary">
+          <div>
+            <p class="tiny">Next checkup</p>
+            <h2 id="checkupTitle">Tomorrow, 10:30 am</h2>
+            <p id="checkupCopy">A calm wellness visit. Bring weight notes and the last stiffness observation.</p>
+          </div>
+          <div class="pulse">♥</div>
+        </article>
+        <div class="health-metrics">
+          <article data-status="good"><span>Weight</span><strong id="weightValue">75 lbs</strong></article>
+          <article data-status="good"><span>Mood</span><strong>Gentle</strong></article>
+          <article data-status="low"><span>Meds</span><strong>None</strong></article>
+          <article data-status="low" id="alertMetric"><span>Alert</span><strong id="alertValue">Low</strong></article>
+        </div>
+        <form class="symptom-card" id="symptomForm">
+          <h2>Tell us what feels different</h2>
+          <textarea id="symptomText" rows="4">Mild stiffness after playing fetch, but still eating and asking for cuddles.</textarea>
+          <button class="primary-button" type="submit">Read the signs gently</button>
+          <div id="symptomResult"></div>
+        </form>
+      </section>
+
+      <section class="screen" id="shareScreen">
+        <header class="sub-header">
+          <button class="icon-button" data-go="home">‹</button>
+          <h1>Share Love</h1>
+          <button class="icon-button" id="rerenderCard">↻</button>
+        </header>
+        <canvas id="shareCanvas" width="1080" height="1350"></canvas>
+        <p class="share-caption">A warm card for Instagram, TikTok, or a message to someone who loves them too.</p>
+        <a class="primary-button download" id="downloadCard" download="petjournal-love-card.png">Download card</a>
+      </section>
+
+      <section class="screen" id="profileScreen">
+        <header class="sub-header">
+          <button class="icon-button" data-go="home">‹</button>
+          <h1>Profile</h1>
+          <button class="icon-button">⋯</button>
+        </header>
+        <article class="profile-card">
+          <div class="profile-large">S</div>
+          <p class="tiny">Pet parent</p>
+          <h2>Sarah Cooper</h2>
+          <p>sarah@example.com</p>
+        </article>
+        <article class="subscription-card">
+          <p class="tiny">Subscription</p>
+          <h2>Premium</h2>
+          <p>Unlimited memories, monthly story cards, and gentle AI care support.</p>
+        </article>
+        <div class="settings-list">
+          <button data-go="home">My pets <span>›</span></button>
+          <button>Memory backup <span>›</span></button>
+          <button>Notifications <span>›</span></button>
+          <button>Privacy and security <span>›</span></button>
+          <button>Support <span>›</span></button>
+        </div>
+      </section>
+
+      <nav class="bottom-nav" aria-label="App navigation">
+        <button class="tab active" data-go="home"><span>⌂</span>Home</button>
+        <button class="tab" data-go="memories"><span>♡</span>Memory</button>
+        <button class="tab" data-go="health"><span>✚</span>Care</button>
+        <button class="tab" data-go="share"><span>✦</span>Share</button>
+        <button class="tab" data-go="profile"><span>👤</span>Profile</button>
+      </nav>
+    </section>
+
+    <aside class="side-story">
+      <p class="tiny">Pet care that feels human</p>
+      <h2>Keep every checkup, tiny habit, and soft memory in one place.</h2>
+      <p>Designed from the reference mood: rounded cards, tender colors, caring service flow, and emotional memory writing that reminds owners why they opened the app.</p>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-overlay" id="addPetModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:100;align-items:center;justify-content:center;">
+    <article style="background:var(--cream);border-radius:24px;padding:32px;width:90%;max-width:360px;">
+      <h2 style="margin-bottom:16px">Add a pet</h2>
+      <form id="addPetForm">
+        <label>Name<input id="newPetName" type="text" placeholder="Buddy" required style="display:block;width:100%;margin-top:6px;margin-bottom:12px;padding:10px;border-radius:10px;border:1px solid #ccc"></label>
+        <label>Species<input id="newPetSpecies" type="text" placeholder="Dog, Cat, Rabbit..." required style="display:block;width:100%;margin-top:6px;margin-bottom:12px;padding:10px;border-radius:10px;border:1px solid #ccc"></label>
+        <label>Age<input id="newPetAge" type="text" placeholder="3 years old" required style="display:block;width:100%;margin-top:6px;margin-bottom:20px;padding:10px;border-radius:10px;border:1px solid #ccc"></label>
+        <div style="display:flex;gap:12px">
+          <button type="button" id="cancelAddPet" style="flex:1;padding:12px;border-radius:12px;border:1px solid #ccc;background:transparent;cursor:pointer">Cancel</button>
+          <button type="submit" class="primary-button" style="flex:1">Add pet</button>
+        </div>
+      </form>
+    </article>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
