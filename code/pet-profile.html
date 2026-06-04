@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetJournal | Pet Profile</title>
+  <link rel="stylesheet" href="pet-profile.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="back-link" href="index.html">Back to dashboard</a>
+      <div>
+        <p class="eyebrow">PetJournal</p>
+        <h1>Pet profile</h1>
+      </div>
+    </header>
+
+    <section class="profile-hero" id="profileHero" aria-live="polite">
+      <div class="photo-frame" id="petPhoto">
+        <span>?</span>
+      </div>
+      <div class="profile-copy">
+        <p class="eyebrow" id="petSpecies">Loading</p>
+        <h2 id="petName">Loading pet...</h2>
+        <dl class="profile-facts">
+          <div>
+            <dt>Breed</dt>
+            <dd id="petBreed">Loading</dd>
+          </div>
+          <div>
+            <dt>Age</dt>
+            <dd id="petAge">Loading</dd>
+          </div>
+          <div>
+            <dt>Birth date</dt>
+            <dd id="petBirthDate">Loading</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="alert" id="pageAlert" hidden></div>
+
+    <nav class="tabs" aria-label="Pet records">
+      <button class="tab active" type="button" data-tab="vaccinations">Vaccinations</button>
+      <button class="tab" type="button" data-tab="medications">Medications</button>
+      <button class="tab" type="button" data-tab="appointments">Appointments</button>
+      <button class="tab" type="button" data-tab="weight">Weight</button>
+      <button class="tab" type="button" data-tab="feeding">Feeding Log</button>
+    </nav>
+
+    <section class="records-panel">
+      <div class="records-header">
+        <div>
+          <p class="eyebrow" id="activeTabLabel">Vaccinations</p>
+          <h2 id="recordsTitle">Vaccination records</h2>
+        </div>
+        <button class="primary-button" id="addEntryButton" type="button">Add entry</button>
+      </div>
+
+      <div class="records-list" id="recordsList" aria-live="polite"></div>
+      <div class="inline-form-wrap" id="inlineFormWrap" hidden></div>
+    </section>
+  </main>
+
+  <template id="emptyTemplate">
+    <div class="empty-state">
+      <h3>No records yet</h3>
+      <p>Add the first entry to start tracking this part of your pet's care.</p>
+    </div>
+  </template>
+
+  <script src="pet-profile.js"></script>
+</body>
+</html>

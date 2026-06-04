@@ -1,0 +1,351 @@
+:root {
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --surface-soft: #eef4ff;
+  --border: #dfe7f1;
+  --border-strong: #b8c7dc;
+  --text: #1f2937;
+  --muted: #667085;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --danger: #b42318;
+  --danger-bg: #fff1f0;
+  --success: #047857;
+  --shadow: 0 18px 42px rgba(31, 41, 55, 0.08);
+  --radius: 8px;
+  --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 32px 20px 56px;
+}
+
+.topbar {
+  align-items: end;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.back-link {
+  color: var(--primary);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.topbar h1,
+.profile-copy h2,
+.records-header h2 {
+  margin: 0;
+}
+
+.topbar h1 {
+  font-size: 34px;
+}
+
+.profile-hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 240px 1fr;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.photo-frame {
+  align-items: center;
+  aspect-ratio: 1;
+  background: var(--surface-soft);
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo-frame img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.photo-frame span {
+  align-items: center;
+  background: var(--surface);
+  border-radius: 50%;
+  color: var(--primary);
+  display: flex;
+  font-size: 72px;
+  font-weight: 900;
+  height: 132px;
+  justify-content: center;
+  width: 132px;
+}
+
+.profile-copy {
+  align-self: center;
+}
+
+.profile-copy h2 {
+  font-size: 44px;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+
+.profile-facts {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.profile-facts div {
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+
+.profile-facts dt {
+  color: var(--muted);
+}
+
+.profile-facts dd {
+  font-weight: 800;
+  margin: 0;
+  text-align: right;
+}
+
+.alert {
+  background: var(--danger-bg);
+  border: 1px solid #fecaca;
+  border-radius: var(--radius);
+  color: var(--danger);
+  margin-bottom: 20px;
+  padding: 12px 14px;
+}
+
+.tabs {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding: 6px;
+}
+
+.tab {
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  color: var(--muted);
+  font-weight: 800;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+.tab.active {
+  background: var(--surface-soft);
+  color: var(--primary-dark);
+}
+
+.records-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.records-header {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.primary-button,
+.secondary-button,
+.danger-button {
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-weight: 800;
+  padding: 10px 14px;
+}
+
+.primary-button {
+  background: var(--primary);
+  color: #fff;
+}
+
+.primary-button:hover {
+  background: var(--primary-dark);
+}
+
+.secondary-button {
+  background: #fff;
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.danger-button {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.records-list {
+  display: grid;
+  gap: 12px;
+}
+
+.record-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.record-card header {
+  align-items: start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.record-card h3 {
+  margin: 0;
+}
+
+.record-card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.record-meta {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.record-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.record-table th,
+.record-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.record-table th {
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.empty-state {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  color: var(--muted);
+  padding: 20px;
+}
+
+.empty-state h3 {
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.inline-form-wrap {
+  border-top: 1px solid var(--border);
+  margin-top: 18px;
+  padding-top: 18px;
+}
+
+.inline-form {
+  display: grid;
+  gap: 14px;
+  max-width: 680px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.inline-form label {
+  color: var(--muted);
+  display: grid;
+  font-weight: 700;
+  gap: 6px;
+}
+
+.inline-form input,
+.inline-form textarea {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 760px) {
+  .topbar,
+  .records-header {
+    align-items: stretch;
+    display: grid;
+  }
+
+  .profile-hero,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

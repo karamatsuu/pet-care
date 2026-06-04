@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetJournal | Login</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <form class="auth-card" id="loginForm" novalidate>
+      <p class="eyebrow">PetJournal</p>
+      <h1>Welcome back</h1>
+      <p class="subtitle">Log in to manage your pets, care records, and upcoming reminders.</p>
+
+      <div class="banner-error" id="apiError" role="alert" hidden></div>
+
+      <label class="field">
+        <span>Email</span>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <small class="field-error" id="emailError"></small>
+      </label>
+
+      <label class="field">
+        <span>Password</span>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <small class="field-error" id="passwordError"></small>
+      </label>
+
+      <button class="primary-button" id="submitButton" type="submit">
+        <span class="button-text">Log in</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+
+      <p class="switch-link">New to PetJournal? <a href="register.html">Create an account</a></p>
+    </form>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>

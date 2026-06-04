@@ -1,0 +1,89 @@
+.authShell {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.formCard,
+.formCardWide {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+}
+
+.formCard {
+  max-width: 420px;
+  width: 100%;
+}
+
+.formCardWide {
+  max-width: 560px;
+}
+
+.formCard h1,
+.formCardWide h1 {
+  margin: 0 0 4px;
+}
+
+.kicker {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.formCard label,
+.formCardWide label {
+  color: #536174;
+  display: grid;
+  font-weight: 700;
+  gap: 6px;
+}
+
+.formCard input,
+.formCardWide input {
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+  padding: 11px 12px;
+}
+
+.formCard button,
+.formCardWide button {
+  background: #2563eb;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 800;
+  padding: 12px 14px;
+}
+
+.formCard button:disabled,
+.formCardWide button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.formCard a,
+.backLink {
+  color: #2563eb;
+  font-weight: 800;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.error {
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #b42318;
+  padding: 10px 12px;
+}

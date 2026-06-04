@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetJournal | Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="topnav">
+    <a class="brand" href="dashboard.html">PetJournal</a>
+    <nav class="nav-actions" aria-label="Account">
+      <span class="user-email" id="userEmail">Loading...</span>
+      <button class="ghost-button" id="logoutButton" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main class="dashboard-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Care dashboard</p>
+        <h1>Your pets, care schedule, and daily health notes in one place.</h1>
+      </div>
+      <a class="primary-button" href="add-pet.html">Add Pet</a>
+    </section>
+
+    <div class="alert" id="pageAlert" hidden></div>
+
+    <section class="layout">
+      <aside class="care-panel" aria-label="Upcoming care">
+        <div class="panel-heading">
+          <p class="eyebrow">Next 7 days</p>
+          <h2>Upcoming care</h2>
+        </div>
+
+        <section class="care-section">
+          <h3>Appointments</h3>
+          <div class="care-list" id="appointmentsList">
+            <p class="muted">Loading appointments...</p>
+          </div>
+        </section>
+
+        <section class="care-section">
+          <h3>Medications</h3>
+          <div class="care-list" id="medicationsList">
+            <p class="muted">Loading medications...</p>
+          </div>
+        </section>
+      </aside>
+
+      <section class="pets-section" aria-label="Pets">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">My pets</p>
+            <h2>Profiles</h2>
+          </div>
+          <span class="count-pill" id="petCount">0 pets</span>
+        </div>
+
+        <div class="pets-grid" id="petsGrid" aria-live="polite"></div>
+
+        <section class="empty-state" id="emptyState" hidden>
+          <div class="empty-icon" aria-hidden="true">+</div>
+          <h2>No pets yet</h2>
+          <p>Add your first pet to start tracking appointments, medications, weight, feeding, and care history.</p>
+          <a class="primary-button" href="add-pet.html">Add Pet</a>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetJournal | Register</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <form class="auth-card" id="registerForm" novalidate>
+      <p class="eyebrow">PetJournal</p>
+      <h1>Create account</h1>
+      <p class="subtitle">Start tracking your pets' health records, appointments, and daily care.</p>
+
+      <div class="banner-error" id="apiError" role="alert" hidden></div>
+
+      <label class="field">
+        <span>Email</span>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <small class="field-error" id="emailError"></small>
+      </label>
+
+      <label class="field">
+        <span>Password</span>
+        <input id="password" name="password" type="password" autocomplete="new-password" required>
+        <small class="field-error" id="passwordError"></small>
+      </label>
+
+      <label class="field">
+        <span>Confirm password</span>
+        <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required>
+        <small class="field-error" id="confirmPasswordError"></small>
+      </label>
+
+      <button class="primary-button" id="submitButton" type="submit">
+        <span class="button-text">Create account</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+
+      <p class="switch-link">Already have an account? <a href="login.html">Log in</a></p>
+    </form>
+  </main>
+
+  <script src="register.js"></script>
+</body>
+</html>
